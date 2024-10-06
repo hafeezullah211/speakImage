@@ -242,7 +242,7 @@ const HomeLayout = () => {
 
     try {
       let response: ApiResponse;
-      const clientId = getCookie("userId");
+      const clientId = "d1b02fabdf6942f88a6aada8d89a8913";
       if (!clientId) {
         console.error("User ID not found");
         return;
@@ -253,7 +253,7 @@ const HomeLayout = () => {
           "https://api.speakimage.ai/api/init-chat",
           {
             query: prompt,
-            user_id: user?.user_id || clientId,
+            user_id: "d1b02fabdf6942f88a6aada8d89a8913",
           },
           { withCredentials: true, signal: controller.signal }
         );
@@ -263,7 +263,7 @@ const HomeLayout = () => {
           // Create a new chat entry and add it to allChats
           const newChat: ChatHistory = {
             _id: response.data.thread_id,
-            user_id: user?.user_id || clientId,
+            user_id: "d1b02fabdf6942f88a6aada8d89a8913",
             title: prompt.split(" ").slice(0, 5).join(" "), // Generate a title from the first few words of the prompt
             conversation: [
               {
